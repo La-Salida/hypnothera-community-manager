@@ -1,0 +1,14 @@
+[Unit]
+Description=Hypnothera Community Manager
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/hypnothera-community
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/opt/hypnothera-community/.env
+ExecStart=/opt/hypnothera-community/venv/bin/python hypnothera_community_manager.py
+
+[Install]
+WantedBy=multi-user.target
